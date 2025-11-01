@@ -1,9 +1,7 @@
-// src/App.jsx
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LandingPage from './pages/user/LandingPage';
-import ListingPage from './pages/user/listing';
-import OrderPage from './pages/user/order';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/user/LandingPage";
+import ListingPage from "./pages/user/listing"; // dapat meron ka nito
+import OrderPage from "./pages/user/order"; // dapat meron ka rin nito
 
 function App() {
   return (

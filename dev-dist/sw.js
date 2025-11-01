@@ -78,8 +78,11 @@ define(['./workbox-e7681877'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
+    "url": "registerSW.js",
+    "revision": "3ca0b8505b4bec776b69afdba2768812"
+  }, {
     "url": "/index.html",
-    "revision": "0.0lk81o7mreg"
+    "revision": "0.3i3p82558n8"
   }], {});
   workbox.cleanupOutdatedCaches();
   workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/index.html"), {
@@ -87,7 +90,7 @@ define(['./workbox-e7681877'], (function (workbox) { 'use strict';
   }));
   workbox.registerRoute(({
     request
-  }) => request.destination === "document" || request.destination === "script" || request.destination === "style" || request.destination === "image" || request.destination === "font", new workbox.NetworkFirst({
+  }) => ["document", "script", "style", "image", "font"].includes(request.destination), new workbox.NetworkFirst({
     "cacheName": "offline-cache",
     plugins: [new workbox.ExpirationPlugin({
       maxEntries: 50,
@@ -96,3 +99,4 @@ define(['./workbox-e7681877'], (function (workbox) { 'use strict';
   }), 'GET');
 
 }));
+//# sourceMappingURL=sw.js.map
